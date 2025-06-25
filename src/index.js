@@ -14,11 +14,14 @@ let host = null;
 // 내 개발 컴퓨터: localhost
 console.log(window.location.hostname)
 
-// if(){
+if(window.location.hostname === 'localhost'){
+  host = 'http://localhost:8080'
+} else {
+  // aws 주소를 직접 사용하면 프로토콜 문제로 호출 안됨 따라서 우회를 해야함
+  host = '/api'
+}
 
-// } else {
-
-// }
+console.log("지금 api 주소 : " , host)
 
 const dispatch = store.dispatch
 
