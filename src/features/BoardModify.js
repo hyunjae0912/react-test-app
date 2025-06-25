@@ -67,7 +67,7 @@ const BoardModify = () => {
     
     // 파일은 값이 존제하면 넣기
     if(board.uploadfile != null){
-    formDate.append('uploadfile', board.uploadfile);
+    formDate.append('uploadFile', board.uploadFile);
     }
     // api 호출해서 게시물 수정
     const respone = await axios.put(`${host}/board/modify`,formDate ,{
@@ -126,9 +126,9 @@ const BoardModify = () => {
               <Form.Control type="text" value={board.writer} readOnly/>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="board.uploadfile">
+            <Form.Group className="mb-3" controlId="board.uploadFile">
               <Form.Label>이미지</Form.Label>
-              <Form.Control type="file" name='uploadfile' onChange={ handlerChange } />
+              <Form.Control type="file" name='uploadFile' onChange={ handlerChange } />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="board.regDate">

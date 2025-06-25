@@ -90,12 +90,12 @@ const BoardDetail = () => {
 
             1. 프로젝트 내부에 저장하여 웹투르로 접근
             2. aws같은 사이트를 이용하여 공개주소로 접근 */}
-
             
             <Form.Group className='mb-3'>
-              <img src={`${IMGSS}${board.imgpath}`}>
+              <img src={`${board.imgPath}`}>
               </img>
             </Form.Group>
+
 
             <Button variant="primary" onClick={() => {
               // 게시물 수정화면으로 이동
