@@ -12,16 +12,20 @@ let host = null;
 
 // 현재 react app을 실행시키는 컴퓨터의 이름 확인
 // 내 개발 컴퓨터: localhost
-console.log(window.location.hostname)
+// netlify: ~~~netlify.app
 
+// 컴퓨터이름에 따라 api 주소 입력
 if(window.location.hostname === 'localhost'){
-  host = 'http://localhost:8080'
+    host = 'http://localhost:8080'
 } else {
-  // aws 주소를 직접 사용하면 프로토콜 문제로 호출 안됨 따라서 우회를 해야함
-  host = '/api'
+    // AWS주소를 직접 사용하면 프로토콜 문제로 호출 안됨
+    // 따라서 /api로 우회(프록시)할 것!
+    // 프록시란? 가짜 요청을 보내고 다시 실제 요청으로 변경
+    // host = 'http://aws주소:8080' X
+    host = '/api' // O
 }
 
-console.log("지금 api 주소 : " , host)
+console.log('현재 api 주소: ', host)
 
 const dispatch = store.dispatch
 
