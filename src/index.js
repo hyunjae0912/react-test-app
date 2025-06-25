@@ -10,11 +10,6 @@ export const Context = createContext()
 
 let host = null;
 
-// 현재 react app을 실행시키는 컴퓨터의 이름 확인
-// 내 개발 컴퓨터: localhost
-// netlify: ~~~netlify.app
-
-// 컴퓨터이름에 따라 api 주소 입력
 if(window.location.hostname === 'localhost'){
     host = 'http://localhost:8080'
 } else {

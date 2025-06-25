@@ -33,7 +33,7 @@ const BoardRegister = () => {
     // 폼데이터 형식
     formDate.append('title', board.title);
     formDate.append('content', board.content);
-    formDate.append('uploadFile', board.uploadfile);
+    formDate.append('uploadFile', board.uploadFile);
 
 
     // 사용자가 입력한 게시물 데이터를 꺼내서 등록 처리 post 처리
@@ -59,6 +59,7 @@ const BoardRegister = () => {
     //console.log(event.target.name, event.target.value, event.target.files); // 이런식으로 데이터 추출하기
 
     const {name, value, files} = event.target;
+    console.log(name, value, files)
 
     // 기존 데이터 복사후 다음에 새로운 프로퍼티 추가
     let newBoard = { ...board }
@@ -69,9 +70,9 @@ const BoardRegister = () => {
     newBoard[name] = value;
   }
 
-
-    setBoard(newBoard);
-  }
+  console.log(newBoard)
+  setBoard(newBoard);
+}
 
 
   return (
@@ -89,7 +90,7 @@ const BoardRegister = () => {
           </Form.Group>
 
           {/* 파일 첨부 */}
-          <Form.Group className="mb-3" controlId="board.uploadfile">
+          <Form.Group className="mb-3" controlId="board.uploadFile">
             <Form.Label>이미지</Form.Label>
             <Form.Control type="file" name='uploadFile' onChange={ handlerChange } />
           </Form.Group>
